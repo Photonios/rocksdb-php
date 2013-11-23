@@ -4,6 +4,16 @@ RocksDB is a new embedded database for storing key-value pairs developed by Face
 
 https://github.com/facebook/rocksdb
 
+Platforms
+--
+RocksDB is said to compile on Linux and Mac OS X. So far, I haven't seen anyone getting it to build on Windows, but it should work.
+My build environment is:
+
+* Ubuntu 13.10 x64
+* GCC 4.8.1
+
+All documentation, instructions and guides assume my configuration. If you were able to get it working on another platform, please let me know.
+
 Build
 --
 ##### Building RocksDB
