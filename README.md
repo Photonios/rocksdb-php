@@ -49,10 +49,7 @@ To be able to build RocksDB, you first need to install all dependencies, this ca
     sudo apt-get install libsnappy-dev
     sudo apt-get install zlib1g-dev
     sudo apt-get install libbz2-dev
-    
-You'll also need gflags, which is a library for parsing command line flags. The following guide will help you to set it up:
-
-    http://askubuntu.com/questions/312173/installing-gflags-12-04
+    sudo apt-get install libgflags2
     
 After you've install all dependencies, you can simply run:
 
