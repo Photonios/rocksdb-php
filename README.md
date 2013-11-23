@@ -15,35 +15,11 @@ All documentation, instructions and guides assume my configuration. If you were 
 
 ## Build
 #### Building PHP
-The RocksDB PHP extension is being written against PHP 5.5.6. To make debugging and development easier, it's best to build PHP from source. Download PHP 5.5.6 from here:
+The RocksDB PHP extension is being written against PHP 5.5.3. To be able to build the RocksDB PHP extension, you need to install the following packages:
 
-    wget -O php-5.5.6.tar.bz2 http://nl1.php.net/get/php-5.5.6.tar.bz2/from/this/mirror
+    sudo apt-get install php5-dev
+    sudo apt-get install php5-cli
     
-After downloading, extract the archive and go into it:
-
-    tar jxvf php-5.5.6.tar.bz2
-    cd php-5.5.6
-    
-Because you might already have an existing installation of PHP, it's best to install it by using a custom prefix. In preperation, set PHPDIR to the current directory:
-
-    PHPDIR=`pwd`
-    
-Now, choose a custom installation prefix. I choose 'php-debug-zts'. Create a directory named after your custom installation prefix:
-
-    mkdir php-debug-zts
-    
-Configure PHP by running:
-
-    ./configure --enable-debug --enable-maintainer-zts --prefix=$PHPDIR/php-debug-zts
-    
-Don't forget to replace 'php-debug-zts' with your installation prefix. After that's done, run:
-
-    make install
-    
-That's it! Now, all you have to do, is to add PHP to your path, use the following command to add it to your path for
-this session:
-
-    PATH=$PHPDIR/php-debug-zts/bin:$PATH
     
 #### Building RocksDB
 To build the RocksDB PHP Extension, you first need to build RocksDB. Clone the RocksDB git repository using:
