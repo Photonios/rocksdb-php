@@ -1,6 +1,6 @@
 SOURCE_DIR=src
 CC=g++
-OPTIONS=-std=c++11 -shared
+OPTIONS=-std=c++11 -shared -fPIC
 LIB=-lrocksdb -lpthread -lrt -lsnappy -lgflags -lz -lbz2 -lphpcpp
 INC=-I./$(SOURCE_DIR)/include
 INPUT=$(SOURCE_DIR)/rocksdb_php.cpp
