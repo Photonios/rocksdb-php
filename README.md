@@ -14,6 +14,17 @@ My build environment is:
 All documentation, instructions and guides assume my configuration. If you were able to get it working on another platform, please let me know.
 
 ## Build
+#### Building RocksDB PHP Extension
+Before trying to build the RocksDB PHP extension, make sure you have installed all dependencies listed below. After that, you can simply checkout the code:
+
+	git clone https://github.com/Photonios/rocksdb-php.git
+	
+Then, run make:
+
+	make
+	
+The PHP extension, which is a shared/dynamiclly linked library can be found in the `bin` directory.
+
 #### Building PHP
 The RocksDB PHP extension is being written against PHP 5.5.3. To be able to build the RocksDB PHP extension, you need to install the following packages:
 
