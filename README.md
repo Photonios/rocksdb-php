@@ -13,6 +13,12 @@ My build environment is:
 
 All documentation, instructions and guides assume my configuration. If you were able to get it working on another platform, please let me know.
 
+## Notes
+I use a custom version of PHP-CPP, because I added basic exception support. Please checkout the fork, until my
+pull request has been accepted:
+
+	git clone https://github.com/Photonios/PHP-CPP
+
 ## Build
 #### Building RocksDB PHP Extension
 Before trying to build the RocksDB PHP extension, make sure you have installed all dependencies listed below. After that, you can simply checkout the code:
