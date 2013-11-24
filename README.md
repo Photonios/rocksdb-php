@@ -1,3 +1,5 @@
+<center><img align="center" src="http://i.imgur.com/C6GyDV0.png" /></center>
+
 RocksDB PHP Extension
 ===
 RocksDB is a new embedded database for storing key-value pairs developed by Facebook. This project hosts a PHP extension for RocksDB. More information on RocksDB can be found here:
