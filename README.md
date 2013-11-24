@@ -78,3 +78,18 @@ To install the RocksDB library you can do either of these three things:
 * Copy the file `librocksdb.a` to `/usr/lib`
 
 Choose whatever you like :)
+
+## Installation
+After you build the RocksDB PHP extension, you should have a `.so` file in the `bin` directory. Execute:
+
+	php --ini
+	
+To find out where your PHP configuration file is located. It should output something liek this:
+
+	Loaded Configuration File:         /etc/php5/cli/php.ini
+
+Find the line that starts with `extension=`, if it's commented out, uncomment it and set the path to your extension, like this:
+
+	extension=/iam_awesome/cookies/dance/in/the/rain/rocksdb-php.so
+	
+Then, enjoy :D
