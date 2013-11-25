@@ -1,3 +1,5 @@
+<center><img align="center" src="http://i.imgur.com/C6GyDV0.png" /></center>
+
 RocksDB PHP Extension
 ===
 RocksDB is a new embedded database for storing key-value pairs developed by Facebook. This project hosts a PHP extension for RocksDB. More information on RocksDB can be found here:
@@ -13,7 +15,24 @@ My build environment is:
 
 All documentation, instructions and guides assume my configuration. If you were able to get it working on another platform, please let me know.
 
+## Notes
+I use a custom version of PHP-CPP, because I added basic exception support. Please checkout the fork, until my
+pull request has been accepted:
+
+	git clone https://github.com/Photonios/PHP-CPP
+
 ## Build
+#### Building RocksDB PHP Extension
+Before trying to build the RocksDB PHP extension, make sure you have installed all dependencies listed below. After that, you can simply checkout the code:
+
+	git clone https://github.com/Photonios/rocksdb-php.git
+	
+Then, run make:
+
+	make
+	
+The PHP extension, which is a shared/dynamiclly linked library can be found in the `bin` directory.
+
 #### Building PHP
 The RocksDB PHP extension is being written against PHP 5.5.3. To be able to build the RocksDB PHP extension, you need to install the following packages:
 
@@ -67,3 +86,18 @@ To install the RocksDB library you can do either of these three things:
 * Copy the file `librocksdb.a` to `/usr/lib`
 
 Choose whatever you like :)
+
+## Installation
+After you build the RocksDB PHP extension, you should have a `.so` file in the `bin` directory. Execute:
+
+	php --ini
+	
+To find out where your PHP configuration file is located. It should output something liek this:
+
+	Loaded Configuration File:         /etc/php5/cli/php.ini
+
+Find the line that starts with `extension=`, if it's commented out, uncomment it and set the path to your extension, like this:
+
+	extension=/iam_awesome/cookies/dance/in/the/rain/rocksdb-php.so
+	
+Then, enjoy :D
