@@ -2,7 +2,10 @@
 #include "rocksdb.h"
 #include "error_messages.h"
 
-RocksDB::RocksDB() :
+namespace RocksDB
+{
+
+Database::Database() :
 	m_db_path		(),
 	m_rdb	 		(NULL),
 	m_last_error	(),
@@ -11,7 +14,7 @@ RocksDB::RocksDB() :
 
 }
 
-void RocksDB::__construct(Php::Parameters &params)
+void Database::__construct(Php::Parameters &params)
 {
 	if(params.empty() || !params[0].isString())
 		Php::ThrowError(ErrorMessages::InvalidParamExpectedString);
@@ -19,12 +22,12 @@ void RocksDB::__construct(Php::Parameters &params)
 	m_db_path = params[0].stringValue();
 }
 
-void RocksDB::__destruct()
+void Database::__destruct()
 {
 	Close();
 }
 
-Php::Value RocksDB::Open(Php::Parameters &params)
+Php::Value Database::Open(Php::Parameters &params)
 {
 	if(IsOpen())
 	{
@@ -56,12 +59,12 @@ Php::Value RocksDB::Open(Php::Parameters &params)
 	return true;
 }
 
-Php::Value RocksDB::GetLastError()
+Php::Value Database::GetLastError()
 {
 	return m_last_error;
 }
 
-Php::Value RocksDB::IsOpen()
+Php::Value Database::IsOpen()
 {
 	if(m_rdb == NULL)
 		return false;
@@ -69,12 +72,12 @@ Php::Value RocksDB::IsOpen()
 	return m_is_open;
 }
 
-Php::Value RocksDB::GetDbPath()
+Php::Value Database::GetDbPath()
 {
 	return m_db_path;
 }
 
-Php::Value RocksDB::Close()
+Php::Value Database::Close()
 {
 	if(m_rdb == NULL)
 	{
@@ -86,7 +89,7 @@ Php::Value RocksDB::Close()
 	return true;
 }
 
-Php::Value RocksDB::Get(Php::Parameters &params)
+Php::Value Database::Get(Php::Parameters &params)
 {
 	if(params.empty())
 			Php::ThrowError(ErrorMessages::ExpectedOneParameter);
@@ -111,7 +114,7 @@ Php::Value RocksDB::Get(Php::Parameters &params)
 	return value;
 }
 
-Php::Value RocksDB::Put(Php::Parameters &params)
+Php::Value Database::Put(Php::Parameters &params)
 {
 	if(params.empty() || params.size() < 2)
 		Php::ThrowError(ErrorMessages::ExpectedTwoParamters);
@@ -129,3 +132,5 @@ Php::Value RocksDB::Put(Php::Parameters &params)
 
 	return true;
 }
+
+} // namespace RocksDB

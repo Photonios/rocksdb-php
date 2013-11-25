@@ -1,18 +1,21 @@
-#ifndef ROCKSDB_H_
-#define ROCKSDB_H_
+#ifndef DATABSE_H_
+#define DATABSE_H_
+
+namespace RocksDB
+{
 
 /*!
  * \brief The PHP wrapper for the rocksdb::DB class. Represents a single RocksDB database.
  * \author Swen Kooij
  */
-class RocksDB : public Php::Base
+class Database : public Php::Base
 {
 public:
 	/*!
-	 * \brief Initializes a new instance of the RocksDB class.
+	 * \brief Initializes a new instance of the Database class.
 	 * \note This is NOT the PHP constructor.
 	 */
-	RocksDB();
+	Database();
 
 	/*!
 	 * \brief The PHP constructor, the method that gets called when
@@ -99,4 +102,6 @@ private:
 	bool			m_is_open;
 };
 
-#endif /* ROCKSDB_H_ */
+} // namespace RocksDB
+
+#endif /* DATABSE_H_ */

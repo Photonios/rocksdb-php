@@ -1,5 +1,5 @@
 #include "includes.h"
-#include "rocksdb.h"
+#include "database.h"
 
 extern "C"
 {
@@ -7,16 +7,16 @@ extern "C"
 	{
 		static Php::Extension rocksdb_extension("RocksDB PHP Extension", "1.0");
 
-		rocksdb_extension.add("RocksDB", Php::Class<RocksDB>(
+		rocksdb_extension.add("RocksDB", Php::Class<RocksDB::Database>(
 		{
-				Php::Public("__construct", Php::Method<RocksDB>(&RocksDB::__construct)),
-				Php::Public("Open", Php::Method<RocksDB>(&RocksDB::Open)),
-				Php::Public("GetLastError", Php::Method<RocksDB>(&RocksDB::GetLastError)),
-				Php::Public("IsOpen", Php::Method<RocksDB>(&RocksDB::IsOpen)),
-				Php::Public("GetDbPath", Php::Method<RocksDB>(&RocksDB::GetDbPath)),
-				Php::Public("Get", Php::Method<RocksDB>(&RocksDB::Get)),
-				Php::Public("Put", Php::Method<RocksDB>(&RocksDB::Put)),
-				Php::Public("Close", Php::Method<RocksDB>(&RocksDB::Close))
+				Php::Public("__construct", Php::Method<RocksDB::Database>(&RocksDB::Database::__construct)),
+				Php::Public("Open", Php::Method<RocksDB::Database>(&RocksDB::Database::Open)),
+				Php::Public("GetLastError", Php::Method<RocksDB::Database>(&RocksDB::Database::GetLastError)),
+				Php::Public("IsOpen", Php::Method<RocksDB::Database>(&RocksDB::Database::IsOpen)),
+				Php::Public("GetDbPath", Php::Method<RocksDB::Database>(&RocksDB::Database::GetDbPath)),
+				Php::Public("Get", Php::Method<RocksDB::Database>(&RocksDB::Database::Get)),
+				Php::Public("Put", Php::Method<RocksDB::Database>(&RocksDB::Database::Put)),
+				Php::Public("Close", Php::Method<RocksDB::Database>(&RocksDB::Database::Close))
 		}));
 
 		return rocksdb_extension.module();
