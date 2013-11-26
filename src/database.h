@@ -1,5 +1,5 @@
-#ifndef DATABSE_H_
-#define DATABSE_H_
+#ifndef ROCKSDB_DATABSE_H_
+#define ROCKSDB_DATABSE_H_
 
 namespace RocksDB
 {
@@ -104,4 +104,4 @@ private:
 
 } // namespace RocksDB
 
-#endif /* DATABSE_H_ */
+#endif /* ROCKSDB_DATABSE_H_ */

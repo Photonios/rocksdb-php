@@ -1,5 +1,5 @@
-#ifndef ERROR_MESSAGES_H_
-#define ERROR_MESSAGES_H_
+#ifndef ROCKSDB_ERROR_MESSAGES_H_
+#define ROCKSDB_ERROR_MESSAGES_H_
 
 namespace RocksDB
 {
@@ -15,4 +15,4 @@ namespace ErrorMessages
 
 } // namespace RocksDB
 
-#endif /* ERROR_MESSAGES_H_ */
+#endif /* ROCKSDB_ERROR_MESSAGES_H_ */
