@@ -6,6 +6,21 @@ RocksDB is a new embedded database for storing key-value pairs developed by Face
 
 https://github.com/facebook/rocksdb
 
+###Simple Example
+	<?php
+		$rocksdb = new RocksDB("my_rocksdb_file");
+		$result = $rocksdb->Open(true);
+		if($result)
+			die("Unable to open rocksdb!");
+			
+		$rocksdb->Put("my_awesome_key", "my_awesome_value");
+		$value = $rocksdb->Get("my_awesome_key");
+		
+		echo $value . "\n";
+	?>
+	
+Check `test/test.php` for more examples.
+
 ##Platforms
 RocksDB is said to compile on Linux and Mac OS X. So far, I haven't seen anyone getting it to build on Windows, but it should work.
 My build environment is:
