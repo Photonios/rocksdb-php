@@ -85,6 +85,10 @@ To be able to build RocksDB, you first need to install all dependencies, this ca
     sudo apt-get install libbz2-dev
     sudo apt-get install libgflags2
     
+Or run:
+
+	sudo apt-get install libsnappy-dev zlib1g-dev libbz2-dev libgflags2
+    
 After you've install all dependencies, you can simply run:
 
     make clean
