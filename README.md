@@ -84,10 +84,11 @@ To be able to build RocksDB, you first need to install all dependencies, this ca
     sudo apt-get install zlib1g-dev
     sudo apt-get install libbz2-dev
     sudo apt-get install libgflags2
+    sudo apt-get install libgflags-dev
     
 Or run:
 
-	sudo apt-get install libsnappy-dev zlib1g-dev libbz2-dev libgflags2
+	sudo apt-get install libsnappy-dev zlib1g-dev libbz2-dev libgflags2 libgflags-dev
     
 After you've install all dependencies, you can simply run:
 
@@ -102,7 +103,7 @@ To install the RocksDB library you can do either of these three things:
 
 * Add the path where you cloned RocksDB to LD_LIBRARY_PATH (`export LD_LIBRARY_PATH+=/path/to/rocksdb`)
 * Create a new file in `/etc/ld.so.conf.d` with the `.conf` extension, where the path to RocksDB is on a single line
-* Copy the file `librocksdb.a` to `/usr/lib`
+* Copy the files `librocksdb.a` and `libmemenv.a` to `/usr/lib`
 
 Choose whatever you like :)
 
