@@ -1,5 +1,5 @@
 #include "includes.h"
-#include "rocksdb.h"
+#include "database.h"
 #include "error_messages.h"
 
 namespace RocksDB
