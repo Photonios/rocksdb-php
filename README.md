@@ -93,7 +93,7 @@ Or run:
 After you've install all dependencies, you can simply run:
 
     make clean
-    make
+    CFLAGS=-fPIC CXXFLAGS=-fPIC make
     
 To build and run all unit tests:
 
